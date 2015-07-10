@@ -1,0 +1,91 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="scotchTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Easy Engineer Node/Angular App</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script type="text/javascript" src="js/vendor/processing.min.js"></script>
+	<script type="text/javascript" src="js/vendor/require.js"></script>
+	<script type="text/javascript" src="js/vendor/dat.gui.min.js"></script>
+	<script type="text/javascript" src="core.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL -->
+<body ng-controller="mainController">
+
+<div class="content">
+
+		<!-- HEADER AND TODO COUNT -->
+			<h1>EASY ENGINEER</h1><div class="sub_title"><span class="label label-info">{{ todos.length }} COMPOSITIONS SAVED</span></div>
+
+		<!-- TODO LIST -->
+	<div id="todo-list" class="row">
+		<table>
+			<thead>
+				<tr>
+			    	<!--<th>Select</th>-->
+			        <th>Name</th>
+			        <th>Gear1 x</th>
+			        <th>Gear1 y</th>
+			        <th>Size1</th>
+			        <th>Dir1</th>
+			        <th>Delete</th>
+			    </tr>
+			</thead>
+			<tbody>
+			<!-- LOOP OVER $scope.todos -->
+				<tr ng-repeat="todo in todos">
+			      	<!--<th><input type="checkbox" ng-click="selectComp(todo._id)"></th>-->
+			        <th>{{ todo.text }}</th>
+			        <th>{{ todo.g1X }}</th>
+			        <th>{{ todo.g1Y }}</th>
+			        <th>{{ todo.g1Jradius }} </th>
+			        <th>{{ todo.g1dirc }} </th>
+			        <th><input type="checkbox" ng-click="deleteComp(todo._id)"></th>
+			    </tr>
+   			</tbody>
+		</table>
+		<!-- FORM -->
+		<div id="todo-form" class="">
+				<form ng-submit="createComp()">
+						<!-- BIND THIS VALUE IN ANGULAR -->
+					<input type="text" class="title" placeholder="Title" ng-model="formData.text">
+					<input type="hidden" class="g1x" id="g1X" ng-model="formData.g1X"/>
+					<input type="hidden" class="g1x" id="g1Y" ng-model="formData.g1Y"/>
+					<input type="hidden" class="g1x" id="g1jX" ng-model="formData.g1jX"/>
+					<input type="hidden" class="g1x" id="g1jY" ng-model="formData.g1jY"/>
+					<input type="hidden" class="g1x" id="g1dirc" ng-model="formData.g1dirc"/>
+					<input type="hidden" class="g1x" id="g1Jradius" ng-model="formData.g1Jradius"/>
+					<input type="hidden" class="g1x" id="g1outerR" ng-model="formData.g1outerR"/>
+					<input type="hidden" class="g1x" id="g2X" ng-model="formData.g2X"/>
+					<input type="hidden" class="g1x" id="g2Y" ng-model="formData.g2Y"/>
+					<input type="hidden" class="g1x" id="g2jX" ng-model="formData.g2jX"/>
+					<input type="hidden" class="g1x" id="g2jY" ng-model="formData.g2jY"/>
+					<input type="hidden" class="g1x" id="g2dirc" ng-model="formData.g2dirc"/>
+					<input type="hidden" class="g1x" id="g2Jradius" ng-model="formData.g2Jradius"/>
+					<input type="hidden" class="g1x" id="g2outerR" ng-model="formData.g2outerR"/>
+					<input type="hidden" class="g1x" id="jX" ng-model="formData.jX"/>
+					<input type="hidden" class="g1x" id="jY" ng-model="formData.jY"/>
+
+					<!-- WILL CREATE NEW-->
+					<button type="submit">Save</button>
+				</form>
+		</div>
+	</div>
+	<a id="downloadLnk" class="download" download="DrawingShape.jpg">Download</a>
+</div>	
+	<canvas id="canvas1"></canvas>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

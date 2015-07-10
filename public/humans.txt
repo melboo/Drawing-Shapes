@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Melanie Bossert
+    melaniebossert.com
+
+
+# THANKS
+  All NodeJS developer
+    
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, ProcessingJS, NodeJS, Express, AngularJS, Mongoose

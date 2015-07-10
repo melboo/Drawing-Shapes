@@ -1,0 +1,11 @@
+extends layout
+
+block content
+<form method="post", action="/add_posts">
+	<input type="text", name="post_title", placeholder="Enter the post title">
+	<input type="text", name="post_slug", placeholder="Enter the slug you want">
+	<textarea rows="10", cols="80", name="post_body"></textarea>
+	<input type="submit" value="Submit">
+
+
+</form>

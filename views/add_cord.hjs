@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  	<h1>{{ title }}</h1>
+<form method="post", action="/add_cord">
+	<input type="text", name="cord_title", placeholder="Enter the cord title">
+	<input type="text", name="cord_x", placeholder="Enter x">
+	<input type="text", name="cord_y", placeholder="Enter y">
+	<input type="submit" value="Submit">
+</form>
+  </body>
+</html>
